@@ -1,0 +1,17 @@
+{{#if products}}
+    {{#each products}}
+        <article class="card" data-productId="{{_id}}">
+            <div class="card-img-container">
+                <img src="/img/products/{{mainPhoto}}" alt="{{name}}">
+            </div>
+            <div class="card-info">
+                <h3 class="card-title">{{name}}</h3>
+                <p class="card-description">{{shortDescription}}</p>
+                <div class="card-price" data-price="{{price}}">$ {{price}},00</div>
+            </div>
+                <a href="#" class="card-link-add">Agregar al carrito</a>
+        </article>
+      {{/each}}
+{{else}}
+    <h2>No se encontraron productos</h2>
+{{/if}}     

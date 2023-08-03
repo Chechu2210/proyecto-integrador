@@ -1,0 +1,79 @@
+    <form id="formProduct" action="" autocomplete="off">
+
+            <div class="three-columns">
+                <div class="form-div-wrapper">
+                    <label for="product-name">Nombre<sup>*</sup></label>
+                    <input required type="text" name="product-name" id="product-name" autofocus minlength="2" maxlength="70">{{name}}
+                </div>
+                <div class="form-div-wrapper">
+                    <label for="price">Precio<sup>*</sup></label>
+                    <input required type="number" min="0" max="999999"  step="0.01" id="price" name="price">{{}}
+                </div>
+                <div class="form-div-wrapper">
+                    <label for="stock">Stock<sup>*</sup></label>
+                    <input required type="number"  min="0" step="1" id="stock" name="stock">{{stock}}
+                </div>
+                <div class="form-div-wrapper">
+                    <label for="brand">Marca<sup>*</sup></label>
+                    <select required id="brand" name="brand">{{brand}}</select>
+                </div>
+                
+                <div class="form-div-wrapper">
+                    <label for="category">Categoría<sup>*</sup></label>
+                    <select required name="category" id="category">{{category}}
+                    </select>
+                </div>
+            </div>
+            <div class="form-div-wrapper">
+                <label for="short-description">Descripción corta<sup>*</sup></label>
+                <textarea required id="short-description" name="short-description" rows="10" cols="20" minlength="10" maxlength="200">{{shortDescription}}</textarea>
+
+            </div>
+            <div class="form-div-wrapper">
+                <label for="long-description">Descripción larga<sup>*</sup></label>
+                <textarea required id="long-description" name="long-description" rows="10" cols="20" minlength="10" maxlength="2000">longDescription</textarea>
+            </div>
+            <div class="form-div-wrapper inline-block checkbox">
+                <label for="free-shipping">Envío sin cargo</label>
+                <input type="checkbox" id="free-shipping" name="free-shipping" checked>
+            </div>
+            <fieldset>
+                <legend>Edad:</legend>
+                <div class="input-radio-wrapper two-columns">
+                    <div>
+                        <input required type="radio" id="age-babies" name="age" value="meses">
+                        <label for="age-babies">0 a 24 meses</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="age-kids-adults" name="age" value="anios">
+                        <label for="age-kids-adults">2 años a adultos</label>
+                    </div>
+                </div>
+            <div class="two-columns">
+                <div class="form-div-wrapper">
+                    <label for="age-from">Edad desde<sup>*</sup></label>
+                    <input required id="age-from" name="age-from" type="number" min="0" max="100" step="1">
+                    <span class="product-form-error" id="productAgeFromError"></span>
+                </div>
+                <div class="form-div-wrapper">
+                    <label for="age-up-to">Edad hasta<sup>*</sup></label>
+                    <input required id="age-up-to" name="age-up-to" type="number" min="0" max="100" step="1">
+                    <span class="product-form-error" id="productAgeToError"></span>
+                </div>
+            </div>
+            </fieldset>  
+            <div class="form-div-wrapper">    
+                <label class="choose_file" for="main-photo" tabindex="0">
+                    Seleccionar Imagen<sup>*</sup>
+                    <input required id="main-photo" name="main-photo" type="file" accept="image/png, image/jpeg">
+                    <img src="" alt="">
+                    <span id="productImgName"></span>
+                    <span class="product-form-error" id="productPhotoError"></span>
+                </label>
+            </div>
+            <span><sup>*</sup>Campo obligatorio</span>
+            <div class="formBtnsCont">
+                <input id="btn-send-new" type="submit" value="Crear">
+                <input type="reset" value="Borrar">
+            </div>
+    </form>

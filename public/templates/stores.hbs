@@ -1,0 +1,22 @@
+
+{{#if stores}}
+    {{#each stores}}
+        <div class="store-details">
+            <h3>{{store-name}}</h3>
+            <div class="store-img-container">
+                <img src="img/sucursales/suscursal-caballito.jpeg" alt="sucursal-caballito">
+            </div>
+            <div class="address-detail">
+                <p>Av. Jose Maria Moreno 15</p>
+                <p>Lu. a vier. 09:00 - 22:00hs</p>
+                <p>Sábados 10:00 - 15:00hs</p>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.4339416511552!2d-58.43894112477064!3d-34.618472758276596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca46c612fe19%3A0x1fd72c127422adb6!2sAv.%20Jos%C3%A9%20Mar%C3%ADa%20Moreno%2015%2C%20C1424AAA%20CABA!5e0!3m2!1sen!2sar!4v1685815006821!5m2!1sen!2sar" width="280" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    {{/each}}
+{{else}}
+    <h2>No se encontraron sucursales</h2>
+{{/if}}     
+

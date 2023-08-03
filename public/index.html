@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+     <link rel="shortcut icon" href="img/rocket-favicon.png" type="image/png">
+</head>
+<body>
+    <script src="../js/vendor/handlebars.min-v4.7.7.js"></script>
+    <!-- NAVIGATION BAR -->   
+    <header>
+        <div id="nav_title">
+            <h1>JUEGUETERÍA CÓSMICA<img id="img-logo" src="img/logo-spaceship.png" alt="nave espacial"></h1>
+        </div>
+        <!-- Menu -->
+        <div id="main-header">
+            <nav class="nav_bar">
+                <ul class="nav_links">
+                    <li class="link_active">
+                        <a href="#/home" id="nav-home">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#/create" id="nav-create">PRODUCTO NUEVO</a>
+                    </li>
+                    <li>
+                        <a href="#/about-us" id="nav-about-us">NOSOTROS</a>
+                    </li>
+                    <li>
+                        <a href="#/contact" id="nav-contact">CONTACTO</a>
+                    </li>
+                </ul>
+            </nav>
+            <div id="header-icons-wrapper">
+                <button id="btn-search" class="header-icon icon-search">
+                    <svg version="1.1" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+                        <g>
+                        <path d="M51.6,96.7c11,0,21-3.9,28.8-10.5l35,35c0.8,0.8,1.8,1.2,2.9,1.2s2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8l-35-35   c6.5-7.8,10.5-17.9,10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8,6.5,6.5,26.8,6.5,51.6C6.5,76.5,26.8,96.7,51.6,96.7z M51.6,14.7   c20.4,0,36.9,16.6,36.9,36.9C88.5,72,72,88.5,51.6,88.5c-20.4,0-36.9-16.6-36.9-36.9C14.7,31.3,31.3,14.7,51.6,14.7z"/>
+                        </g>
+                    </svg>
+                    Buscar
+                </button>
+                <button id="btn-stores" class="header-icon icon-location">
+                    <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 25 25">
+                        <path id="Location_Pin" data-name="Location Pin" d="M12.5,0A9.24,9.24,0,0,0,3,9.41c0,7.88,8.8,15.17,9.17,15.47a.5.5,0,0,0,.65,0C13.21,24.53,22,16.51,22,9.41A9.24,9.24,0,0,0,12.5,0Zm0,14A4.5,4.5,0,1,1,17,9.5,4.5,4.5,0,0,1,12.5,14Z"/>
+                    </svg>
+                    Locales
+                </button>
+                <button id="btn-logIn" class="header-icon icon-user">
+                    <svg viewBox="0 0 64 64">
+                        <g id="User">
+                            <path d="M41.2452,33.0349a16,16,0,1,0-18.49,0A26.0412,26.0412,0,0,0,4,58a2,2,0,0,0,2,2H58a2,2,0,0,0,2-2A26.0412,26.0412,0,0,0,41.2452,33.0349ZM20,20A12,12,0,1,1,32,32,12.0137,12.0137,0,0,1,20,20ZM8.09,56A22.0293,22.0293,0,0,1,30,36h4A22.0293,22.0293,0,0,1,55.91,56Z"/>
+                        </g>
+                    </svg>
+                    Ingresar
+                </button>
+                <button id="btn-cart" class="header-icon btn-cart-toggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                        <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    Carrito
+                </button>
+                         <!-- Hamburger icon -->
+                <button class="header-icon btn-hamb-menu">
+                    <div class="hamb-menu" id="hamb-menu">
+                       <span class="hamb-line"></span>
+                       <span class="hamb-line"></span>
+                       <span class="hamb-line"></span>
+                    </div>
+                    Menú
+                </button>
+            </div>
+        </div>
+    </header>
+             <!-- CART CONTAINER -->
+    <section class="cart-modal-container modal-outer">
+        <div class="modal-inner">
+            <button class="close-button" type="button" title="Cerrar">&times;</button>
+            <h2 id="my-purchase">Mi compra:</h2>
+            <div class="cart-items">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="product" scope="col" colspan="2">Producto</th>
+                            <th class="product-price" scope="col">Precio</th>
+                            <th class="quantity" scope="col">Cantidad</th>
+                            <th class="quantity-price" scope="col">Subtotal</th>
+                            <th class="item-remove" scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="product-wrapper" data-productCode="333">
+                            <td data-label="Producto" class="product-image"><img class="img-product" src="img/products/organo-electronico.jpg" alt="organo-electrónico"></td>
+                            <td class="product-name">Organo Electrónico</td>
+                            <td data-label="Precio" class="product-price">$ 2.952,00</td>
+                            <td data-label="Cantidad" class="quantity">
+                                <div class="quantity-wrapper">
+                                    <span class="icon-minus">
+                                        <div class="horizontal"></div>
+                                    </span>
+                                    <span class="number">1</span>
+                                    <span class="icon-plus">
+                                        <div class="horizontal"></div>
+                                        <div class="vertical"></div>
+                                    </span>
+                                </div>
+                            </td>
+                            <td data-label="Subotal" class="quantity-price">$ 2.952,00</td>
+                            <td data-label="" class="item-remove">
+                                <button title="Eliminar" class="btn-delete-item"></button>
+                            </td>
+                        </tr>
+                        <tr class="product-wrapper" data-productCode="397">
+                            <td data-label="Producto" class="product-image"><img src="img/products/monopatin.jpg" alt="monopatín"></td>
+                            <td class="product-name">Monopatín 2 Ruedas</td>
+                            <td data-label="Precio" class="product-price">$ 26.890,00</td>
+                            <td data-label="Cantidad" class="quantity">
+                                <div class="quantity-wrapper">
+                                    <span class="icon-minus">
+                                        <div class="horizontal"></div>
+                                    </span>
+                                    <span class="number">1</span>
+                                    <span class="icon-plus">
+                                        <div class="horizontal"></div>
+                                        <div class="vertical"></div>
+                                    </span>
+                                </div>
+                            </td>
+                            <td data-label="Subotal" class="quantity-price">$ 26.890,00</td>
+                            <td data-label="" class="item-remove">
+                                <button title="Eliminar" class="btn-delete-item"></button>
+                            </td>
+                        </tr>
+                        <tr class="product-wrapper" data-productCode="983">
+                            <td data-label="Producto" class="product-image"><img src="img/products/robot-pokibot.jpg" alt="robot-pokibot-interactivo"></td>
+                            <td class="product-name">Robot Pokibot Interactivo 7.5 Cm</td>
+                            <td data-label="Precio" class="product-price">$ 8.991,00</td>
+                            <td data-label="Cantidad" class="quantity">
+                                <div class="quantity-wrapper">
+                                    <span class="icon-minus">
+                                        <div class="horizontal"></div>
+                                    </span>
+                                    <span class="number">2</span>
+                                    <span class="icon-plus">
+                                        <div class="horizontal"></div>
+                                        <div class="vertical"></div>
+                                    </span>
+                                </div>
+                            </td>
+                            <td data-label="Subotal" class="quantity-price">$ 17.982,00</td>
+                            <td data-label="" class="item-remove">
+                                <button title="Eliminar" class="btn-delete-item"></button>
+                            </td>
+                        </tr>
+                        <tr class="product-wrapper" data-productCode="334">
+                            <td data-label="Producto" class="product-image"><img src="img/products/juego-espias.jpg" alt="juego-de-espía-spy"></td>
+                            <td class="product-name">Juego De Espía Spy</td>
+                            <td data-label="Precio" class="product-price">$ 4.292,00</td>
+                            <td data-label="Cantidad" class="quantity">
+                                <div class="quantity-wrapper">
+                                    <span class="icon-minus">
+                                        <div class="horizontal"></div>
+                                    </span>
+                                    <span class="number">1</span>
+                                    <span class="icon-plus">
+                                        <div class="horizontal"></div>
+                                        <div class="vertical"></div>
+                                    </span>
+                                </div>
+                            </td>
+                            <td data-label="Subotal" class="quantity-price">$ 4.292,00</td>
+                            <td data-label="" class="item-remove">
+                                <button title="Eliminar" class="btn-delete-item"></button>
+                            </td>
+                        </tr>
+                        <tr class="product-wrapper" data-productCode="986">
+                            <td data-label="Producto" class="product-image"><img src="img/products/sistema-solar.jpg" alt="sistema-solar-para-niños"></td>
+                            <td class="product-name">Set Infantil Planetario Sistema Solar Kidzlabs</td>
+                            <td data-label="Precio" class="product-price">$ 8.900,00</td>
+                            <td data-label="Cantidad" class="quantity">
+                                <div class="quantity-wrapper">
+                                    <span class="icon-minus">
+                                        <div class="horizontal"></div>
+                                    </span>
+                                    <span class="number">1</span>
+                                    <span class="icon-plus">
+                                        <div class="horizontal"></div>
+                                        <div class="vertical"></div>
+                                    </span>
+                                </div>
+                            </td>
+                            <td data-label="Subotal" class="quantity-price">$ 8.900,00</td>
+                            <td data-label="" class="item-remove">
+                                <button title="Eliminar" class="btn-delete-item"></button>
+                            </td>
+                        </tr>    
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="4" class="info">Total:</td>
+                            <td class="monetary">$ 61.016,00</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="btns-cart-container">
+                <button class="btn-checkout btn-empty">Vaciar</button>
+                <button class="btn-checkout btn-buy">Comprar</button>
+            </div>
+        </div>
+    </section>
+            <!-- ---------------- MAIN CONTENT-------------- --->
+    <main id="main-container"> 
+    </main>
+
+    <!-- FOOTER  -->
+
+    <footer>
+        <ul class="footer_links_social" id="footer-media">
+            <li>
+                <a href="mailto:pivotlink@gmail.com"><img title="Enviar correo electrónico" src="img/envelop.png" alt="sobre"></a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com.ar" target="_blank"><img title="Ir a Facebook Page" src="img/fb-icon.png" alt="facebook"></a> 
+            </li>
+            <li>
+                <a href="https://www.instagram.com.ar" target="_blank"><img title="Ir a Instagram Page" src="img/ig-icon.png" alt="instagram"></a>
+            </li>
+        </ul>
+        <h3>Proyecto Integrador: Juguetería Cósmica - Cecilia Sosa</h3>
+        <ul class="footer_links_second_nav">
+            <li>
+                <a href="#/home">INICIO</a>
+            </li>
+            <li>
+                <a href="#/create">PRODUCTO NUEVO</a>
+            </li>
+            <li>
+                <a href="#/about-us">NOSOTROS</a>
+            </li>
+            <li>
+                <a href="#/contact">CONTACTO</a>
+            </li>
+        </ul>
+    </footer>
+    <script id="main-script" src="js/main.js"></script>
+    <script id="dynamic-script" src="js/modules/index.js"></script>
+</body>
+</html>
+
