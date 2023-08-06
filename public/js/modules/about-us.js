@@ -10,6 +10,20 @@ class PageNosotros {
         document.getElementById('main-about-us').innerHTML = viewContent;
     }
 
+    static async setupAccordion() {
+        const accordionHeaders = document.querySelectorAll('.accordion-title');
+        accordionHeaders.forEach((header) => {
+            header.addEventListener('click', () => {
+                header.classList.toggle('accordion-title--open');
+            });
+        });
+    }   ;        
+
+    static async loadAndSetupAccordion() {
+        await PageNosotros.loadPage('views/faq.html');
+        PageNosotros.setupAccordion();
+      }
+
     static async init() {
         console.log('PageNosotros.init()');
         console.log('.');
@@ -19,8 +33,6 @@ class PageNosotros {
         const mainContainer = document.getElementById("main-container");
 
         mainContainer.addEventListener('click', async ev => {
-            console.log(ev.target.id);
-
             if (ev.target.id === "btn-about-us-text") {
                 console.log('about-us-text');
                 PageNosotros.loadPage('views/about-us-text.html');
@@ -29,7 +41,7 @@ class PageNosotros {
                 PageNosotros.loadPage('views/our-team.html');
             } else if (ev.target.id === "btn-faq") {
                 console.log('FAQ');
-                PageNosotros.loadPage('views/faq.html');
+                await PageNosotros.loadAndSetupAccordion();
             };
         });
     };

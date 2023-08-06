@@ -17,30 +17,6 @@ class PageBusqueda {
         return deletedProduct;
     };
 
-    static getProductFromRow(row){
-
-    }
-
-    static completeForm(e){
-        const row = e.target.closest('tr');
-        const productToEdit = PageBusqueda.getProductFromRow(row);
-        console.log('productTiEdit', productToEdit)
-
-    }
-    /*
-        document.getElementById('btn-put').addEventListener('click', async e => {
-        e.preventDefault();
-        const id = inputId.value;
-        const product = {
-            name: inputName.value,
-            description: inputDescription.value,
-            price: inputPrice.value,
-        };
-        const updatedProduct = await http.put('/api/products/', id, product);
-        // console.log(product);
-        console.log(updatedProduct);
-    });
-*/
     static async addTableEvents() {
         PageBusqueda.productsTableContainer.addEventListener('click', async e => {
             if (e.target.classList.contains('btn-delete')) {
@@ -49,8 +25,7 @@ class PageBusqueda {
                 return;
             }
             if (e.target.classList.contains('btn-edit')) {
-                console.log('editar');  
-                PageBusqueda.completeForm(e);          
+                console.log('editar');       
                 return;
             }
         });
@@ -80,7 +55,6 @@ class PageBusqueda {
 
         PageBusqueda.prepareTable();
     };
-
 }
 
 export default PageBusqueda;

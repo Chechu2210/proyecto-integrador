@@ -16,7 +16,7 @@
             <h1>JUEGUETERÍA CÓSMICA<img id="img-logo" src="img/logo-spaceship.png" alt="nave espacial"></h1>
         </div>
         <!-- Menu -->
-        <div id="main-header">
+        <div id="main-header" class="main-nav">
             <nav class="nav_bar">
                 <ul class="nav_links">
                     <li class="link_active">
@@ -33,37 +33,43 @@
                     </li>
                 </ul>
             </nav>
-            <div id="header-icons-wrapper">
-                <button id="btn-search" class="header-icon icon-search">
-                    <svg version="1.1" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
-                        <g>
-                        <path d="M51.6,96.7c11,0,21-3.9,28.8-10.5l35,35c0.8,0.8,1.8,1.2,2.9,1.2s2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8l-35-35   c6.5-7.8,10.5-17.9,10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8,6.5,6.5,26.8,6.5,51.6C6.5,76.5,26.8,96.7,51.6,96.7z M51.6,14.7   c20.4,0,36.9,16.6,36.9,36.9C88.5,72,72,88.5,51.6,88.5c-20.4,0-36.9-16.6-36.9-36.9C14.7,31.3,31.3,14.7,51.6,14.7z"/>
-                        </g>
-                    </svg>
-                    Buscar
-                </button>
-                <button id="btn-stores" class="header-icon icon-location">
-                    <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 25 25">
-                        <path id="Location_Pin" data-name="Location Pin" d="M12.5,0A9.24,9.24,0,0,0,3,9.41c0,7.88,8.8,15.17,9.17,15.47a.5.5,0,0,0,.65,0C13.21,24.53,22,16.51,22,9.41A9.24,9.24,0,0,0,12.5,0Zm0,14A4.5,4.5,0,1,1,17,9.5,4.5,4.5,0,0,1,12.5,14Z"/>
-                    </svg>
-                    Locales
-                </button>
-                <button id="btn-logIn" class="header-icon icon-user">
-                    <svg viewBox="0 0 64 64">
-                        <g id="User">
-                            <path d="M41.2452,33.0349a16,16,0,1,0-18.49,0A26.0412,26.0412,0,0,0,4,58a2,2,0,0,0,2,2H58a2,2,0,0,0,2-2A26.0412,26.0412,0,0,0,41.2452,33.0349ZM20,20A12,12,0,1,1,32,32,12.0137,12.0137,0,0,1,20,20ZM8.09,56A22.0293,22.0293,0,0,1,30,36h4A22.0293,22.0293,0,0,1,55.91,56Z"/>
-                        </g>
-                    </svg>
-                    Ingresar
-                </button>
-                <button id="btn-cart" class="header-icon btn-cart-toggle">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
-                        <circle cx="9" cy="21" r="1"></circle>
-                            <circle cx="20" cy="21" r="1"></circle>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                    Carrito
-                </button>
+            <ul id="header-icons-wrapper">
+                <li id="nav-search">
+                    <a  class="header-icon icon-search" href="#/search">
+                        <svg version="1.1" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129">
+                            <g>
+                            <path d="M51.6,96.7c11,0,21-3.9,28.8-10.5l35,35c0.8,0.8,1.8,1.2,2.9,1.2s2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8l-35-35   c6.5-7.8,10.5-17.9,10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8,6.5,6.5,26.8,6.5,51.6C6.5,76.5,26.8,96.7,51.6,96.7z M51.6,14.7   c20.4,0,36.9,16.6,36.9,36.9C88.5,72,72,88.5,51.6,88.5c-20.4,0-36.9-16.6-36.9-36.9C14.7,31.3,31.3,14.7,51.6,14.7z"/>
+                            </g>
+                        </svg>
+                        Buscar
+                    </a>
+                </li>
+                <li id="nav-stores">
+                    <a class="header-icon icon-location" href="#/stores">
+                        <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 25 25">
+                            <path id="Location_Pin" data-name="Location Pin" d="M12.5,0A9.24,9.24,0,0,0,3,9.41c0,7.88,8.8,15.17,9.17,15.47a.5.5,0,0,0,.65,0C13.21,24.53,22,16.51,22,9.41A9.24,9.24,0,0,0,12.5,0Zm0,14A4.5,4.5,0,1,1,17,9.5,4.5,4.5,0,0,1,12.5,14Z"/>
+                        </svg>
+                        Locales
+                    </a>
+                </li>
+                <li id="nav-logIn">
+                    <a class="header-icon icon-user" href="#/log-in">
+                        <svg viewBox="0 0 64 64">
+                            <g id="User">
+                                <path d="M41.2452,33.0349a16,16,0,1,0-18.49,0A26.0412,26.0412,0,0,0,4,58a2,2,0,0,0,2,2H58a2,2,0,0,0,2-2A26.0412,26.0412,0,0,0,41.2452,33.0349ZM20,20A12,12,0,1,1,32,32,12.0137,12.0137,0,0,1,20,20ZM8.09,56A22.0293,22.0293,0,0,1,30,36h4A22.0293,22.0293,0,0,1,55.91,56Z"/>
+                            </g>
+                        </svg>
+                        Ingresar
+                    </a>
+                </li>
+                <li id="btn-cart" class="header-icon btn-cart-toggle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                            <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        Carrito
+                </li>
                          <!-- Hamburger icon -->
                 <button class="header-icon btn-hamb-menu">
                     <div class="hamb-menu" id="hamb-menu">
@@ -73,7 +79,7 @@
                     </div>
                     Menú
                 </button>
-            </div>
+            </ul>
         </div>
     </header>
              <!-- CART CONTAINER -->

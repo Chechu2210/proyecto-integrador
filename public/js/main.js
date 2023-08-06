@@ -1,5 +1,5 @@
-const hambMenuButton = document.querySelector(".btn-hamb-menu");
-const navbar = document.getElementsByClassName("nav_bar")[0];
+/*const hambMenuButton = document.querySelector(".btn-hamb-menu");
+const navbar = document.getElementsByClassName("nav_bar");
 
 hambMenuButton.addEventListener('click',() => {
     console.log("boton apretado");
@@ -83,7 +83,7 @@ for(let i = 0; i < productsQuantityPlus.length; i++){
     })
 };
 
-
+*/
 
 class Main{
 
@@ -109,7 +109,6 @@ class Main{
         return `./modules/${id}.js`;
     };
 
-  
     async initJS(id) {
         const moduleUrl = this.getModuleUrlFromId(id);
         try {
@@ -127,17 +126,19 @@ class Main{
     setActiveLink(id){
         const activePageId = `#nav-${id}`;
         const aActive = document.querySelector(activePageId); 
-        const siblings = aActive.parentElement.closest('.nav_links').querySelectorAll('li');
+        const siblings = aActive.parentElement.closest('.main-nav').querySelectorAll('li');
         siblings.forEach(sibling => {
             sibling.classList.remove('link_active');   
         aActive.parentElement.classList.add('link_active');
         });
     };
     
-    async loadTemplate(id) {
+    async loadTemplate() {
+        const id = this.getIdFromHash();
+        
         const viewUrl = this.getViewUrlFromId(id);
         const viewContent = await this.ajax(viewUrl);
-        document.getElementById('main-container').innerHTML = viewContent;
+        document.querySelector('main').innerHTML = viewContent;
 
         this.setActiveLink(id);
 
@@ -145,30 +146,13 @@ class Main{
     }
 
     async loadTemplates() {
-        const id = this.getIdFromHash();
-        this.loadTemplate(id);
-        window.addEventListener('hashchange', () => this.loadTemplate(id));
+        this.loadTemplate();
+        window.addEventListener('hashchange', () => this.loadTemplate());
     }
 
     async start() {
-        console.warn("start");
         await this.loadTemplates();
-        this.updatePageTitle();
-
-        document.getElementById('btn-search').addEventListener('click', async e =>{
-            const id = 'search';
-            this.loadTemplate(id);
-            
-            this.initJS(id);
-        } )
-
-        document.getElementById('btn-stores').addEventListener('click', async e =>{
-            const id = 'stores';
-            this.loadTemplate(id);
-            
-            this.initJS(id);
-        } )
-    };
+    }
 }
 
 const main = new Main();

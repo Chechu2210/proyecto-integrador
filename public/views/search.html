@@ -1,9 +1,18 @@
-<h1>Nuestros Juguetes</h1>
 <div id="search-nav-bar">
-    <button id="btn-getAll">Ver todos</button>
-    <button id="btn-find">Buscar</button>
-    <button id="btn-create">Agregar producto nuevo</button>
+    <h1 id="search-title">Nuestros Juguetes</h1>
+    <ul class="search-btns">
+        <button id="btn-find">Buscar</button>
+        <button id="btn-getAll">Ver todos</button>
+        <button id="btn-create">Agregar producto nuevo</button>
+    </ul>
 </div>
-<div id="modify-product-container"></div>
+<!-- Modal Container -->
+<section class="cart-modal-container modal-outer hidden"></section>
+<div id="modal-edit" class="modal modal-inner hidden">
+    <button class="close-button" type="button" title="Cerrar">&times;</button>
+    <div class="modal-content">
+    </div>
+</div>
+</section>
 <section id="search-main-container">
 </section>

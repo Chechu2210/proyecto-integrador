@@ -118,7 +118,8 @@ p {
     color:var(--yellow);
 }
 
-.nav_links li a:active{
+.nav_links li a:active,
+#header-icons-wrapper li a:active{
     color: var(--yellow-active);
 }
 .nav_links{
@@ -172,19 +173,24 @@ p {
     padding: 2px;
 }
 
-#header-icons-wrapper button:hover{
+#header-icons-wrapper li:hover,
+#header-icons-wrapper a:hover{
     color: var(--yellow);
     fill: var(--yellow);
 }
+
 
 #header-icons-wrapper .btn-hamb-menu:hover .hamb-line{
     background-color: var(--yellow);
 }
 
-#header-icons-wrapper button:active{
+#header-icons-wrapper button:active,
+#header-icons-wrapper a:active{
     color: var(--yellow-active);
     fill: var(--yellow-active);
 }
+
+
 #header-icons-wrapper .btn-pressed:hover,
 #header-icons-wrapper .btn-pressed{
     color: var(--yellow-active);
@@ -239,9 +245,13 @@ p {
     opacity: 1;
 }
 
-/*  
 
-CART CONTAINER:CART ITEMS */
+/*                                       EDIT MODAL CONTAINER */
+.modal-inner.hidden{
+    display: none;
+}
+
+/*  CART CONTAINER:CART ITEMS */
 
 .cart-items{
     padding: 1em;
@@ -1236,3 +1246,98 @@ footer h3{
 }
 
 /* ABOUT US: OUR TEAM  */
+
+/* SEARCH PAGE */
+
+
+#search-title{
+    text-transform: uppercase;
+    font-family: "Heykiddo", sans-serif;
+    text-align: center;
+    padding: 10px;
+}
+
+#search-nav-bar{
+    display: flex;
+    justify-content:space-between;
+    margin: 5px;
+    max-width:1070px;
+}
+
+.search-btns button{
+    margin-left:5px;
+    margin-right: 5px;
+    padding: 5px;
+    text-transform: uppercase;
+    font-family: "Heykiddo", sans-serif;
+}
+.search-btns button:hover{
+    color: #009879;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.search-btns{
+    display: flex;
+    justify-content:center;
+    font-family: 'Titillium Web', sans-serif;
+    text-transform: uppercase;
+}
+
+/* PRODUCTS TABLE  */
+.table-products{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: 'Titillium Web', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-products .hidden{
+    display: none;
+}
+
+.table-products thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: center;
+    padding:6px;
+}
+
+.table-products th,
+.table-products td {
+    padding: 12px 15px;
+}
+
+.table-products caption{
+    text-transform: uppercase;
+    font-family: "Heykiddo", sans-serif;
+    font-size: 1.5em ;
+    padding: 5px;
+}
+
+.table-products tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-products th{
+    text-transform: uppercase;
+}
+
+.table-products tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+    background-color: #f3f3f3;
+}
+
+.table-products .tdImgCont{
+    width: 40px;
+    height: 40px;
+    margin:auto;
+    padding: 0;
+}
+
+.table-products img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+

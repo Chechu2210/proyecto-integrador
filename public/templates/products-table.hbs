@@ -3,22 +3,24 @@
         <caption>Productos</caption>
         <thead>
             <tr>
+                <th scope="column">Imagen</th>
                 <th scope="column">Nombre</th>
                 <th scope="column">Precio</th>
                 <th scope="column">Descripción corta</th>
                 <th scope="column">Stock</th>
-                <th scope="column">Id</th>
+                <th scope="column" class="hidden">Id</th>
                 <th scope="column">Acciones</th>
             </tr>
         </thead>
         <tbody>
             {{#each products}}
                 <tr>
+                    <td data-product-property="image" class="tdImgCont"><img src="/img/products/{{mainPhoto}}" alt="{{name}}"></td>
                     <td data-product-property="name">{{name}}</td>
-                    <td data-product-property="price">{{price}}</td>
+                    <td data-product-property="price">${{price}}</td>
                     <td data-product-property="shortDescription">{{shortDescription}}</td>
-                    <td data-product-property="stock">{{stock}}</td>
-                    <td data-product-property="_id">{{_id}}</td>
+                    <td data-product-property="stock">{{stock}} u.</td>
+                    <td data-product-property="_id" class="hidden">{{_id}}</td>
                     <td>
                         <button class="btn-edit" title="Editar producto">Editar</button>
                         <button class="btn-delete" title="Eliminar producto">Eliminar</button>
