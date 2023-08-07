@@ -78,15 +78,13 @@
 		"name": "Castillo de Lego",
 		"price": 9800,
 		"stock": 4,
-		"brand": "Lego",
-		"category": "Juego de armado",
+		"brand": "Lego\n            \n            \n            ",
+		"category": "Juego de armado\n            \n            \n            ",
 		"shortDescription": "Entrá al mundo de los castillos con Lego",
 		"longDescription": "320 piezas de colores",
-		"freeShipping": true,
+		"freeShipping": "false",
 		"ageFrom": 4,
 		"ageUpTo": 12,
-		"ageUnit": "años",
-		"mainPhoto": "lego-castillo-123.jpg",
 		"_id": "59"
 	}
 ]

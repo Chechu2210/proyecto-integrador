@@ -73,9 +73,9 @@ class PageBusqueda {
     static async updateProduct(id){
         const cellName = document.querySelector('td[data-product-property="name"]');
         const cellPrice = document.querySelector('td[data-product-property="price"]');
-        const stockCell = getElementById("td-quantity");
-        const brandCell = getElementById("td-brand");
-        const cellCategory = getElementById("td-category");
+        const stockCell = document.getElementById("td-quantity");
+        const brandCell = document.getElementById("td-brand");
+        const cellCategory = document.getElementById("td-category");
         const cellShortDescription = document.querySelector('td[data-product-property="shortDescription"]');
         const cellLongDescription = document.getElementById("td-longDescription");
         const cellFreeShipping = document.getElementById("td-freeShipping");
@@ -95,19 +95,19 @@ class PageBusqueda {
                 category: cellCategory.textContent,
                 shortDescription: cellShortDescription.textContent,
                 longDescription: cellLongDescription.textContent,
-                freeShipping: cellFreeShipping.textContent,
+                freeShipping: cellFreeShipping.innerText,
                 ageGroup: cellAgeUnit.value,
                 ageFrom: parseInt(cellAgeFrom.textContent),
                 ageUpTo: parseInt(cellAgeUpTo.textContent),
                 //mainPhoto: cellMainPhoto.textContent,
             };
             try {
-                const updatedProduct = await productController.updatedProduct(id, product);
+                const updatedProduct = await productController.updateProduct(id, product);
                 console.log(updatedProduct);
-                showBanner('El producto se ha modificado de alta correctamente!', 'success');
+                PageAlta.showBanner('El producto se ha modificado de alta correctamente!', 'success');
                 PageBusqueda.closeModalEdit();
             } catch (error) {
-                showBanner('Hubo un error al intentar dar de alta el producto, por favor inténtelo nuevamente.', 'error');
+                PageAlta.showBanner('Hubo un error al intentar dar de alta el producto, por favor inténtelo nuevamente.', 'error');
             }
 
         });
@@ -171,7 +171,7 @@ class PageBusqueda {
         const html = template({product});
         document.getElementById('edit-table-container').innerHTML = html;
         PageBusqueda.optionsAvailable();
-        PageBusqueda.updateProduct();
+        await PageBusqueda.updateProduct();
     }
 
     static async renderTemplateTable(products) {
