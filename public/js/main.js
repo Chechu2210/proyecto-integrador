@@ -1,59 +1,3 @@
-/*const hambMenuButton = document.querySelector(".btn-hamb-menu");
-const navbar = document.getElementsByClassName("nav_bar");
-
-hambMenuButton.addEventListener('click',() => {
-    console.log("boton apretado");
-    navbar.classList.toggle('active');
-});
-
-//BTN CART
-const btnCart = document.querySelector('.btn-cart-toggle');
-const cartContainer = document.querySelector('.cart-modal-container');
-let isCartVisible = true;
-btnCart.addEventListener('click', function(){
-    if(isCartVisible){
-        btnCart.classList.toggle('btn-pressed', isCartVisible);
-        cartContainer.classList.toggle('cart-visible', isCartVisible);
-    } 
-    isCartVisible = !isCartVisible;
-}) 
-
-//EVENT CLICK ON MODAL CART 
-cartContainer.addEventListener('click', ev =>{
-    if(ev.target.classList.contains('btn-delete-item')){
-        console.log('Botón de eliminar presionado');
-    }
-})
-//                 CLOSE CART FUNCTION
-function closeCart(){
-    if(!isCartVisible){
-        console.log("Cerrar carrito");
-        isCartVisible = true;
-        btnCart.classList.remove('btn-pressed');
-        cartContainer.classList.remove('cart-visible');
-    }
-}
-window.addEventListener('keydown', function(ev){
-    if (ev.key === 'Escape'&& !isCartVisible){    
-        closeCart();
-    };
-})
-
-//          CROSS BUTTON TO CLOSE CART 
-const btnCloseCart = document.querySelector('.close-button');
-btnCloseCart.addEventListener('click', function(){
-    if (!isCartVisible){
-        closeCart();
-    }
-})
-// CLOSE CART CLICKING OUT OF THE CART ZONE
-const modalOuter = document.querySelector('.modal-outer');
-modalOuter.addEventListener('click', ev =>{
-    if(!ev.target.closest('.modal-inner')){
-        closeCart();
-    }
-})
-
 
 //          PLUS MINUS PRODUCT QUANTITY IN CART
 const  productsQuantityMinus= document.querySelectorAll('.icon-minus');
@@ -83,10 +27,9 @@ for(let i = 0; i < productsQuantityPlus.length; i++){
     })
 };
 
-*/
 
 class Main{
-
+        
     updatePageTitle() {
         document.title = `${document.title} - Cecilia Sosa - Proyecto Integrador: Juguetería Cósmica`
     };
@@ -123,6 +66,63 @@ class Main{
         }
     };
 
+    static hambMenuButton = document.querySelector(".btn-hamb-menu");
+
+    static addHambMenuFunction(){
+        Main.hambMenuButton.addEventListener('click',() => {
+            document.querySelector('.nav_bar').classList.toggle('active');
+        });
+    };
+
+    //          CART 
+    static btnCloseCart = document.querySelector('.close-button');
+
+    static btnCart = document.querySelector('.btn-cart-toggle');
+
+    static cartContainer = document.querySelector('.cart-modal-container');
+
+    static modalOuter = document.querySelector('.modal-outer');
+
+    static isCartVisible = true;
+
+    static loadOpenCart(){
+        Main.btnCart.addEventListener('click', function(){
+            if(Main.isCartVisible){
+                Main.btnCart.classList.toggle('btn-pressed', Main.isCartVisible);
+                Main.cartContainer.classList.toggle('cart-visible', Main.isCartVisible);
+        } 
+        Main.isCartVisible = !Main.isCartVisible;
+        });
+    };    
+
+
+    static closeCart(){
+        if(!Main.isCartVisible){
+            console.log("Cerrar carrito");
+            Main.isCartVisible = true;
+            Main.btnCart.classList.remove('btn-pressed');
+            Main.cartContainer.classList.remove('cart-visible');
+        };
+    };
+
+    static loadCloseCartFunction(){
+        window.addEventListener('keydown', function(ev){
+            if (ev.key === 'Escape'&& !Main.isCartVisible){    
+                Main.closeCart();
+            };
+        });    
+        Main.btnCloseCart.addEventListener('click', function(){
+            if (!Main.isCartVisible){
+                Main.closeCart();
+            };
+        });
+        Main.modalOuter.addEventListener('click', ev =>{
+            if(!ev.target.closest('.modal-inner')){
+                Main.closeCart();
+            };
+        });
+    };
+
     setActiveLink(id){
         const activePageId = `#nav-${id}`;
         const aActive = document.querySelector(activePageId); 
@@ -152,6 +152,9 @@ class Main{
 
     async start() {
         await this.loadTemplates();
+        Main.loadOpenCart();
+        Main.loadCloseCartFunction();
+        Main.addHambMenuFunction();
     }
 }
 

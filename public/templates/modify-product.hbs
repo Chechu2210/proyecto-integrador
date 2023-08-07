@@ -1,34 +1,68 @@
-<table>
+<table class="edit-product-tb">
     <thead>
-        <tr>
-            <th class="_Id hidden" scope="row">Id</th>
-            <th class="MainPhoto" scope="row">Foto</th>
-            <th class="product" scope="row">Producto</th>
-            <th class="product-price" scope="row">Precio</th>
-            <th class="quantity" scope="row">Cantidad</th>
-            <th class="brand" scope="row">Marca</th>
-            <th class="ShortDescription" scope="row">Descripción corta</th>
-            <th class="LongDescription" scope="row">Descripción larga</th>
-            <th class="FreeShipping" scope="row">Envío sin cargo</th>
-            <th class="AgeGroup" scope="row">Edad</th>
-            <th class="AgeFrom" scope="row">Edad desde</th>
-            <th class="AgeUpTo" scope="row">Edad hasta</th>
-        </tr>
+        <th scope="column">Producto</th>
+        <th scope="column">Detalles</th>
     </thead>
     <tbody>
-        <td data-product-property="Id" class="hidden" scope="row">{{id}}</td>
-        <td data-product-property="image" class="tdImgCont"><img src="/img/products/{{mainPhoto}}" alt="{{name}}"></td>
-        <td data-product-property="product" scope="row">{{name}}</td>
-        <td data-product-property="product-price" scope="row">{{price}}</td>
-        <td data-product-property="quantity" scope="row">{{stock}}</td>
-        <td data-product-property="brand" scope="row">{{brand}}</td>
-        <td data-product-property="ShortDescription" scope="row">{{shortDescription}}/td>
-        <td data-product-property="LongDescription" scope="row">{{longDescription}}</td>
-        <td data-product-property="FreeShipping" scope="row">{{freeShipping}}</td>
-        <td data-product-property="AgeGroup" scope="row">{{ageGroup}}</td>
-        <td data-product-property="AgeFrom" scope="row">{{ageFrom}}</td>
-        <td data-product-property="AgeUpTo" scope="row">{{ageUpTo}}</td>
+        <tr>
+            <th class="_Id hidden" scope="row">Id</th>
+            <td data-product-property="id" class="hidden" scope="row">{{product._id}}</td>
+        </tr>
+        <tr>    
+            <th class="MainPhoto" scope="row">Foto</th>
+            <td contenteditable="true" data-product-property="image" class="tdImgCont">
+                <input type="file" accept="image/*" data-product-property="mainPhoto"/>
+                <img src="/img/products/{{product.mainPhoto}}" alt="{{product.name}}">
+            </td>
+        </tr>
+        <tr>    
+            <th class="product" scope="row">Producto</th>
+            <td contenteditable="true" data-product-property="name" scope="row">{{product.name}}</td>
+        </tr>
+        <tr>
+            <th class="product-price" scope="row">Precio</th>    
+            <td contenteditable="true"  data-product-property="price" scope="row">{{product.price}}</td>
+        </tr>
+        <tr>
+            <th class="quantity" scope="row">Cantidad</th>
+            <td contenteditable="true"  id="td-quantity" data-product-property="quantity" scope="row">{{product.stock}}</td>
+        </tr>
+        <tr>    
+            <th class="brand" scope="row">Marca</th>
+            <td contenteditable="true" id="td-brand" data-product-property="brand" scope="row">{{product.brand}}
+            </td>       
+        </tr>
+        <tr>    
+            <th class="category" scope="row">Categoria</th>
+            <td contenteditable="true"  id="td-category" data-product-property="category" scope="row">{{product.category}}
+            </td>    
+        </tr>
+        <tr>    
+            <th class="ShortDescription" scope="row">Descripción corta</th>
+            <td contenteditable="true" data-product-property="shortDescription" scope="row">{{product.shortDescription}}</td>
+        </tr>
+        <tr>    
+            <th class="LongDescription" scope="row">Descripción larga</th>
+            <td contenteditable="true" id="td-longDescription" data-product-property="longDescription" scope="row">{{product.longDescription}}</td>
+        </tr>
+        <tr>
+            <th class="FreeShipping" scope="row">Envío sin cargo</th>   
+            <td contenteditable="true" id="td=freeShipping" data-product-property="freeShipping" scope="row">{{product.freeShipping}}</td>
+        </tr>
+        <tr>    
+            <th class="AgeGroup" scope="row">Edad</th>
+            <td contenteditable="true" id="td-ageGroup" data-product-property="ageGroup" scope="row">{{product.ageUnit}}</td>
+        </tr>
+        <tr>    
+            <th class="AgeFrom" scope="row">Edad desde</th>
+            <td contenteditable="true" data-product-property="ageFrom" scope="row">{{product.ageFrom}}</td>
+        </tr>
+        <tr>    
+            <th class="AgeUpTo" scope="row">Edad hasta</th>
+            <td contenteditable="true" data-product-property="ageUpTo" scope="row">{{product.ageUpTo}}</td>
+        </tr>
     </tbody>
 </table>
+
 
     

@@ -1,18 +1,26 @@
 <div id="search-nav-bar">
     <h1 id="search-title">Nuestros Juguetes</h1>
     <ul class="search-btns">
-        <button id="btn-find">Buscar</button>
+        <button id="btn-search">Buscar</button>
         <button id="btn-getAll">Ver todos</button>
-        <button id="btn-create">Agregar producto nuevo</button>
+        <a id="btn-create" href="#/create">Agregar</a>
     </ul>
 </div>
 <!-- Modal Container -->
-<section class="cart-modal-container modal-outer hidden"></section>
-<div id="modal-edit" class="modal modal-inner hidden">
-    <button class="close-button" type="button" title="Cerrar">&times;</button>
-    <div class="modal-content">
+<section id="edit-modal-container" class="edit-modal-container modal-outer">
+    <div class="modal modal-inner">
+        <button class="close-button" type="button" title="Cerrar">&times;</button>
+        <h2>Editar producto:</h2>
+        <div id="edit-table-container" class="modal-content">
+        </div>
+        <div id="btns-container">
+            <button id="button-cancel" class="btn-close-button">Cancelar</button>
+            <button id="button-submit-changes" type="submit">Confirmar</button>
+        </div>
     </div>
-</div>
 </section>
 <section id="search-main-container">
 </section>
+
+
+

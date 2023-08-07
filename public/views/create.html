@@ -3,8 +3,7 @@
      “descripción corta”, “descripción larga”, “envío sin cargo”, “edad desde”, “edad hasta” y “foto”. -->
 <h2 class="title" id="newProductFormTitle">FORMULARIO DE PRODUCTO > ALTA</h2>
 <div id="formProductContainer">
-    <form id="formProduct" action="" autocomplete="off">
-
+    <form id="formProduct" method="post" action="/upload" enctype="multipart/form-data" autocomplete="off">
             <div class="three-columns">
                 <div class="form-div-wrapper">
                     <label for="product-name">Nombre<sup>*</sup></label>
@@ -23,96 +22,13 @@
                 </div>
                 <div class="form-div-wrapper">
                     <label for="brand">Marca<sup>*</sup></label>
-                    <select required id="brand" name="brand">
-                        <option value="">Seleccione una opción</option>
-                        <option value="1">Lego</option>
-                        <option value="2">Fisher-Price</option>
-                        <option value="3">Barbie</option>
-                        <option value="4">Bandai Namco</option>
-                        <option value="5">Nerf</option>
-                        <option value="6">Hasbro</option>
-                        <option value="7">Hot Wheels</option>
-                        <option value="8">My Little Pony</option>
-                        <option value="9">Mattel</option>
-                        <option value="10">Play-Doh</option>
-                        <option value="11">Playskool</option>
-                        <option value="11">Monopoly</option>
-                        <option value="12">Pinypon</option>
-                        <option value="13">Paw Patrol</option>
-                        <option value="14">Rasti</option>
-                        <option value="14">Valija Juliana</option>
-                        <option>Otra: agregar</option>
-                    </select>
-                    <span class="product-form-error" id="productBrandError"></span>
+                    <select required id="brand" name="brand"></select>
                 </div>
-                
                 <div class="form-div-wrapper">
                     <label for="category">Categoría<sup>*</sup></label>
-                    <select required name="category" id="category">
-                            <option value="">Seleccioná una opción</option>
-                        <optgroup label="Aire libre">
-                            <option value="1">Inflables y Piletas</option>
-                            <option value="2">Playa</option>
-                            <option value="3">Jardin</option>
-                            <option value="4">Pistolas de Agua</option>
-                            <option value="5">Deportes</option>
-                        </optgroup>
-                        <optgroup label="Artes, manualidades y libros">
-                            <option value="111">Libros</option>
-                            <option value="112">Masas, Slime y Arenas</option>
-                            <option value="113">Pizarras y Sets de Arte</option>
-                            <option value="114">Squishys</option>
-                        </optgroup>
-                        <optgroup label="Bebes">
-                            <option value="211">Cochecitos</option>
-                            <option value="212">Cunas , Sillas y Butacas</option>
-                            <option value="213">Móviles y Sonajeros</option>
-                            <option value="214">Juguetes</option>
-                            <option value="215">Pisos de Goma y Gimnasios</option>
-                            <option value="216">Para el Baño</option>
-                            <option value="217">Andadores y Andarines</option>
-                            <option value="218">Columpios y Mecedoras</option>
-                        </optgroup>
-                        <option value="311">Disfraces y Accesorios</option>
-                        <option value="411">Electrónica"</option>
-                        <optgroup label="Figuras de Acción y Muñecos">
-                            <option value="511">Coleccionables</option>
-                            <option value="512">Animales y Dinosaurios</option>
-                            <option value="513">Convertibles y Transformers</option>
-                            <option value="514">Funko POP!</option>
-                        </optgroup>
-                        <option value="611">Instrumentos musicales</option>
-                        <optgroup label="Juegos de Mesa y Salón">
-                            <option value="711">Rompecabezas</option>
-                            <option value="712">Trivias</option>
-                            <option value="713">Estrategia</option>
-                            <option value="714">Clasicos</option>
-                            <option value="715">Habilidad e Ingenio</option>
-                            <option value="716">De Salón</option>
-                        </optgroup>
-                        <optgroup label="Jugando a ser grande">
-                            <option value="811">Sets de Compras Y Cocina</option>
-                            <option value="812">Sets de Herramientas</option>
-                            <option value="813">Sets de Belleza</option>
-                            <option value="814">Doctores Y Veterinarios</option>
-                        </optgroup>
-                        <option value="911">Ladrillos y Bloque</option>
-                        <optgroup label="Muñecas y Bebotes">
-                            <option value="911">Muñecas y Ponys</option>
-                            <option value="912">Bebotes</option>
-                            <option value="913">Accesorios</option>
-                            <option value="914">Coleccionables</option>
-                            <option value="915">L.O.L. y Cry Babies</option>
-                        </optgroup>
-                        <option value="1001">Para la escuela</option>
-                        <option value="1100">Peluches</option>
-                        <option value="1200">Pistas y Vehículos</option>
-                        <option value="1300">Pistolas, Espadas y Lanzadardos</option>
-                        <option value="1400">Primera infancia</option>
-                    </select>
-                    <span class="product-form-error" id="productCategoryError"></span>
+                    <select required name="category" id="category"></select>
                 </div>
-            </div>
+            </div>    
             <div class="form-div-wrapper">
                 <label for="short-description">Descripción corta<sup>*</sup></label>
                 <textarea required id="short-description" name="short-description" rows="10" cols="20" minlength="10" maxlength="200"></textarea>
@@ -134,7 +50,7 @@
                         <label for="age-babies">0 a 24 meses</label>
                     </div>
                     <div>
-                        <input type="radio" id="age-kids-adults" name="age" value="anios">
+                        <input type="radio" id="age-kids-adults" name="age" value="años">
                         <label for="age-kids-adults">2 años a adultos</label>
                     </div>
                 </div>
@@ -154,10 +70,9 @@
             <div class="form-div-wrapper">    
                 <label class="choose_file" for="main-photo" tabindex="0">
                     Seleccionar Imagen<sup>*</sup>
-                    <input required id="main-photo" name="main-photo" type="file" accept="image/png, image/jpeg">
+                    <input required id="main-photo" name="main-photo" type="file" accept="image/png, image/jpeg, image/jpg">
                     <img src="" alt="">
                     <span id="productImgName"></span>
-                    <span class="product-form-error" id="productPhotoError"></span>
                 </label>
             </div>
             <span><sup>*</sup>Campo obligatorio</span>
